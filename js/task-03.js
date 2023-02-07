@@ -20,18 +20,3 @@ const itemGallery = images
 const elListGallery = document.querySelector(".gallery");
 
 elListGallery.insertAdjacentHTML("afterbegin", itemGallery);
-
-// const listOfItems = images.map((image) => {
-//   const itemGallery = document.createElement("li");
-
-//   const galleryImage = document.createElement("img");
-
-//   galleryImage.url = image.url;
-//   galleryImage.alt = image.alt;
-
-//   // itemGallery.appendChild(galleryImage);
-
-//   return itemGallery;
-// });
-
-// elListGallery.append(...listOfItems);

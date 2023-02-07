@@ -11,18 +11,6 @@
 // valid і invalid, які ми вже додали у вихідні
 // файли завдання.
 
-// #validation-input {
-//   border: 3px solid #bdbdbd;
-// }
-
-// #validation-input.valid {
-//   border-color: #4caf50;
-// }
-
-// #validation-input.invalid {
-//   border-color: #f44336;
-// }
-
 const elInput = document.querySelector("#validation-input");
 
 const needLength = Number(elInput.dataset.length);
@@ -39,9 +27,3 @@ elInput.addEventListener("blur", (valueLength) => {
   }
   elInput.classList.add("valid");
 });
-
-// elInput.addEventListener("change", (valueLength) => {
-//   console.log(valueLength.currentTarget.value.length);
-
-//   const haveLength = valueLength.currentTarget.value.length;
-// });
