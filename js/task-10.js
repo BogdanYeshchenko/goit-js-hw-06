@@ -19,6 +19,40 @@
 // div#boxes, у такий спосіб видаляючи всі створені
 // елементи.
 
+const el = {
+  inputNamber: document.querySelector('input[type="number"]'),
+  btnCreate: document.querySelector("[data-create]"),
+  btnDestroy: document.querySelector("[data-destroy]"),
+  boxPush: document.querySelector("#boxes"),
+};
+
+let quantityBox = 0;
+
+el.inputNamber.addEventListener("input", (vel) => {
+  quantityBox = Number(vel.currentTarget.value);
+});
+
+el.btnDestroy.addEventListener("click", () => (el.boxPush.innerHTML = ""));
+
+el.btnCreate.addEventListener("click", () => {
+  el.boxPush.innerHTML = "";
+
+  const htmlOfBoxes = document.createElement("div");
+  htmlOfBoxes.classList.add("create-boxes");
+
+  for (let i = 0; i < quantityBox; i += 1) {
+    const htmlOfBox = document.createElement("div");
+
+    htmlOfBox.style.width = 30 + 10 * i + "px";
+    htmlOfBox.style.height = "30px";
+    htmlOfBox.style.backgroundColor = getRandomHexColor();
+
+    htmlOfBoxes.append(htmlOfBox);
+  }
+
+  el.boxPush.append(htmlOfBoxes);
+});
+
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
