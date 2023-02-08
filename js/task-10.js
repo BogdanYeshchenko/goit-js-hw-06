@@ -44,7 +44,7 @@ el.btnCreate.addEventListener("click", () => {
     const htmlOfBox = document.createElement("div");
 
     htmlOfBox.style.width = 30 + 10 * i + "px";
-    htmlOfBox.style.height = "30px";
+    htmlOfBox.style.height = 30 + 10 * i + "px";
     htmlOfBox.style.backgroundColor = getRandomHexColor();
 
     htmlOfBoxes.append(htmlOfBox);
