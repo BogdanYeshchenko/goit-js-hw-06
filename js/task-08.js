@@ -34,6 +34,11 @@ function onFormSubmit(vel) {
     email,
     password,
   };
+
+  if (formData.email === "" || formData.password === "") {
+    alert("Ти погано людина, 'РЕДИСКА'. Заповни всі поля!!!");
+    return;
+  }
   console.log(formData);
 
   el.form.reset();

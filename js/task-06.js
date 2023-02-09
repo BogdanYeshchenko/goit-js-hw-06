@@ -11,6 +11,23 @@
 // valid і invalid, які ми вже додали у вихідні
 // файли завдання.
 
+// const elInput = document.querySelector("#validation-input");
+
+// const needLength = Number(elInput.dataset.length);
+
+// elInput.addEventListener("blur", (valueLength) => {
+//   const haveLength = valueLength.currentTarget.value.length;
+
+//   elInput.classList.remove("valid");
+//   elInput.classList.remove("invalid");
+
+//   if (haveLength !== needLength) {
+//     elInput.classList.add("invalid");
+//     return;
+//   }
+//   elInput.classList.add("valid");
+// });
+
 const elInput = document.querySelector("#validation-input");
 
 const needLength = Number(elInput.dataset.length);
@@ -18,12 +35,15 @@ const needLength = Number(elInput.dataset.length);
 elInput.addEventListener("blur", (valueLength) => {
   const haveLength = valueLength.currentTarget.value.length;
 
-  elInput.classList.remove("valid");
-  elInput.classList.remove("invalid");
-
-  if (haveLength !== needLength) {
-    elInput.classList.add("invalid");
+  if (valueLength.currentTarget.value.length === 0) {
+    elInput.classList.remove("valid");
+    elInput.classList.remove("invalid");
     return;
   }
-  elInput.classList.add("valid");
+
+  elInput.classList.add("invalid");
+
+  if (haveLength == needLength) {
+    elInput.classList.replace("invalid", "valid");
+  }
 });
