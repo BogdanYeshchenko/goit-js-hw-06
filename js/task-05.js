@@ -10,11 +10,11 @@ const el = {
 };
 
 el.inputName.addEventListener("input", (event) => {
-  el.outputName.textContent = event.currentTarget.value;
+  el.outputName.textContent = event.currentTarget.value || "Anonymous";
 
-  if (!el.outputName.textContent) {
-    el.outputName.textContent = "Anonymous";
-  }
+  // if (!el.outputName.textContent) {
+  //   el.outputName.textContent = "Anonymous";
+  // }
 
-  console.log(el.outputName.textContent);
+  // console.log(el.outputName.textContent);
 });
